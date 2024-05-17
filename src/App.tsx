@@ -4,6 +4,8 @@ import "./App.css";
 import ParticlesManager from "./managers/particles.manager";
 import ParticlesRenderer from "./renderers/particles.renderer";
 
+type Mode = "auto" | "click";
+
 const managers = [new ParticlesManager()];
 const renderers = [new ParticlesRenderer(managers[0])];
 let timer: number | null = null;
@@ -26,7 +28,7 @@ const render = () => {
 };
 
 function App() {
-  const [activeAuto, setActiveAuto] = useState(false);
+  const [mode, setMode] = useState<Mode>("auto");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -52,7 +54,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (activeAuto) {
+    if (mode === "auto") {
       if (timer) {
         clearInterval(timer);
       }
@@ -67,26 +69,26 @@ function App() {
         clearInterval(timer);
       }
     }
-  }, [activeAuto]);
+  }, [mode]);
 
   return (
     <div className="wrapper">
       <canvas ref={canvasRef} id="canvas" className="canvas"></canvas>
       <div className="controls">
         <button
-          onClick={() => setActiveAuto(false)}
-          className={activeAuto ? "" : "active"}
+          onClick={() => setMode("click")}
+          className={mode === "click" ? "active" : ""}
         >
-          Manual
+          Click
         </button>
         <button
-          onClick={() => setActiveAuto(true)}
-          className={activeAuto ? "active" : ""}
+          onClick={() => setMode("auto")}
+          className={mode === "auto" ? "active" : ""}
         >
           Auto
         </button>
       </div>
-      {!activeAuto && <div className="info">Click Somewhere</div>}
+      {mode === "click" && <div className="info">Click Somewhere</div>}
     </div>
   );
 }
