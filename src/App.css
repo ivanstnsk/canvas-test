@@ -1,0 +1,67 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(rgb(194, 194, 194) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  top: 1rem;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.controls button {
+  min-width: 100px;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(89, 162, 120);
+  color: white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.controls button.active {
+  background-color: rgb(13, 103, 52);
+}
+.controls button:hover {
+  border-color: rgb(13, 103, 52);
+}
+.info {
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.242);
+  pointer-events: none;
+  text-transform: uppercase;
+  padding: 2rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

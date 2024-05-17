@@ -1,0 +1,104 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+  text-decoration: none;
+  background: transparent;
+  color: inherit;
+  text-transform: none;
+  word-wrap: normal;
+  white-space: normal;
+  line-height: normal;
+  cursor: default;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+button:focus {
+  outline: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  display: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+/* 1 */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 2 */
+[role="button"] {
+  cursor: pointer;
+}
+
+/* 3 */
+iframe:not(.leaflet-interactive) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 4 */
+[hidden] {
+  display: none !important;
+}
